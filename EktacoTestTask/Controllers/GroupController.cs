@@ -24,7 +24,7 @@ namespace EktacoTestTask.Controllers
         public HttpResponseMessage GetGroups()
         {
             var jsonproduct = Newtonsoft.Json.JsonConvert.SerializeObject(_groupService.GetGroupTree());
-            return Request.CreateResponse(HttpStatusCode.OK, jsonproduct.ToString());
+            return Request.CreateResponse(HttpStatusCode.OK, jsonproduct);
 
         }
     }

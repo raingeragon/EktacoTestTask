@@ -28,7 +28,7 @@ namespace EktacoTestTask.Controllers
             if (products != null)
             {
                 var jsonproducts = Newtonsoft.Json.JsonConvert.SerializeObject(products);
-                return Request.CreateResponse(HttpStatusCode.OK, jsonproducts.ToString());
+                return Request.CreateResponse(HttpStatusCode.OK, jsonproducts);
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
@@ -41,7 +41,7 @@ namespace EktacoTestTask.Controllers
             if (product != null)
             {
                 var jsonproduct = Newtonsoft.Json.JsonConvert.SerializeObject(product);
-                return Request.CreateResponse(HttpStatusCode.OK, jsonproduct.ToString());
+                return Request.CreateResponse(HttpStatusCode.OK, jsonproduct);
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
