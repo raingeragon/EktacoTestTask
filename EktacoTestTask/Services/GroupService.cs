@@ -8,7 +8,7 @@ using EktacoTestTask.Extensions;
 
 namespace EktacoTestTask.Services
 {
-    public class GroupService //: IGroupService
+    public class GroupService : IGroupService
     {
         private IRepository<Entities.Group> db;
 

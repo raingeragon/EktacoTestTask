@@ -13,9 +13,9 @@ namespace EktacoTestTask.Controllers
 {
     public class ProductController : ApiController
     {
-        private ProductService _productService;
+        private IProductService _productService;
 
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             _productService = productService;
         }

@@ -7,7 +7,7 @@ using EktacoTestTask.Repository;
 
 namespace EktacoTestTask.Services
 {
-    public class ProductService //: IProductService
+    public class ProductService : IProductService
     {
         private IRepository<Product> db;
 
