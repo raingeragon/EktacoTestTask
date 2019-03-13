@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Net;
+
 namespace EktacoTestTask.Controllers
 {
     public class GroupController : ApiController
@@ -22,9 +23,9 @@ namespace EktacoTestTask.Controllers
         [HttpGet]
         public HttpResponseMessage GetGroups()
         {
-            
-            var jsonproduct = JObject.FromObject(_groupService.GetGroupTree());
+            var jsonproduct = Newtonsoft.Json.JsonConvert.SerializeObject(_groupService.GetGroupTree());
             return Request.CreateResponse(HttpStatusCode.OK, jsonproduct.ToString());
+
         }
     }
 }
