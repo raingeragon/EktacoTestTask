@@ -24,8 +24,6 @@ Endpoints:
       
     "VATRate": 19,
     
-    "GroupId": 6,
-    
-    "StoreId": 2
+    "GroupId": 6
 
    }
