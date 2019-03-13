@@ -19,8 +19,14 @@ namespace EktacoTestTask.Services
 
         public IEnumerable<Group> GetGroupTree()
         {
-            var groups = db.All() as List<Group>;
-            return groups.ToTree().ToList();
+            
+            var groups = db.All();
+            var modelGroups = new List<Group>();
+            foreach (var group in groups)
+            {
+                modelGroups.Add(new Group {Id = group.Id, Name = group.Name, ParentId = group.ParentId});
+            }
+            return modelGroups.ToTree().ToList();
         }
 
     }

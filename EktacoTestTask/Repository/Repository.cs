@@ -28,7 +28,8 @@ namespace EktacoTestTask.Repository
 
         public IEnumerable<T> All()
         {
-            return _dataSet.ToList();
+            var list = _dataSet.ToList();
+            return list;
         }
 
         public async Task<IEnumerable<T>> AllAsync()

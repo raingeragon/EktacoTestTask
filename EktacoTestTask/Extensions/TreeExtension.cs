@@ -25,18 +25,22 @@ namespace EktacoTestTask.Extensions
 
         private static void Search(Group node, IEnumerable<Group> groups)
         {
-            var childs = groups.Where(x => x.ParentId.Equals(node.Id)).ToList();
-
-            foreach (var item in childs)
+            var children = groups.Where(x => x.ParentId.Equals(node.Id)).ToList();
+            if (children != null)
             {
-                node.Children.Add(item);
+                foreach (var item in children)
+                {
+                    if (node.Children == null) 
+                        node.Children = new List<Group>();
+                    node.Children.Add(item);
+                }
+
+                foreach (var item in children)
+                    groups.ToList().Remove(item);
+
+                foreach (var item in children)
+                    Search(item, groups);
             }
-
-            foreach (var item in childs)
-                groups.ToList().Remove(item);
-
-            foreach (var item in childs)
-                Search(item, groups);
         }
     }
 }
